@@ -11,6 +11,8 @@ var plugins 	= require("./gulp/plugins");
 require("./gulp/vendor");
 require("./gulp/user");
 
+console.log("wordpress yall");
+
 /* SASS */
 gulp.task('sass', function() {
 
