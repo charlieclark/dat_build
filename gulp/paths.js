@@ -1,5 +1,5 @@
 var buildPath 	= global._root + "/";
-var publicPath 	= buildPath + "../public/";
+var publicPath 	= buildPath + "../";
 var assetPath 	= publicPath + "assets/";
 
 var paths = {

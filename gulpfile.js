@@ -15,7 +15,7 @@ require("./gulp/user");
 gulp.task('sass', function() {
 
    return plugins.sass( paths.styles.sass ) 
-	    .pipe(gulp.dest( paths.styles.css ))
+	    .pipe(gulp.dest( paths.public ))
 	    .pipe(plugins.livereload());
 });
 
@@ -54,8 +54,8 @@ gulp.task('watch', ['browserify_watch'], function() {
 gulp.task('build', function(){
 	plugins.runSequence(
 		'bower_update',
-		[ 'vendor_scripts', 'user_scripts_min', 'sass' ],
-		'inject'
+		[ 'vendor_scripts', 'user_scripts_min', 'sass' ]
+		// 'inject'
 	)
 });
 

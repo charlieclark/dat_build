@@ -41,10 +41,8 @@ gulp.task('vendor_scripts', function() {
 	
 	var vendorScripts 	= require( paths.js.vendor_config );
 	var desktopScripts 	= plugins.underscore.map( vendorScripts['desktop'], function( s ){ return paths.js.base + s } );
-		
-	var allScripts = desktopScripts.concat( [ paths.js.lib + "*.js" ] );
 
-	return gulp.src( allScripts )
+	return gulp.src( desktopScripts )
 		.pipe( plugins.concat( 'vendor.js' ) )
 		.pipe( gulp.dest(  paths.js.compiled ) )
 		.pipe( plugins.uglify() )
