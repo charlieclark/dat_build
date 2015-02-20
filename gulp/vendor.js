@@ -26,7 +26,7 @@ gulp.task('bower_clear', function(cb) {
 	plugins.del( paths.js.bower + "*.js", {
 		force : true
 	}, cb);
-});
+});  
 
 //filter bower files and move
 gulp.task('bower_clean', function(cb) {
