@@ -17,7 +17,6 @@ gulp.task('browserify_watch', function(){
 
 gulp.task('browserify_nowatch', function(){
   
-  console.log("!!!");
   browserifyWrap(false);
 });
 
