@@ -5,7 +5,7 @@ var paths 		= require("./gulp/paths");
 var plugins 	= require("./gulp/plugins");
 
 //todo
-//gitignore 
+//release 
 
 //breaking out complex tasks
 require("./gulp/vendor");
@@ -33,9 +33,6 @@ gulp.task('inject', function() {
 	    .pipe( gulp.dest( paths.public ) );
 });
 
-/*RELEASE*/
-
-
 /* MAIN TASKS TO CALL FROM CLI */
 /* WATCH */
 gulp.task('watch', ['browserify_watch'], function() {
@@ -46,7 +43,6 @@ gulp.task('watch', ['browserify_watch'], function() {
 
 	gulp.watch( paths.misc.bowerJSON, ['bower_update'] );
 	gulp.watch( vendorPaths, ['vendor_scripts'] );
-	// gulp.watch( paths.js.user + '**/*', ['user_scripts'] );
 	gulp.watch( paths.styles.sass + '**/*', ['sass'] );
 });
 

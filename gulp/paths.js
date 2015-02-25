@@ -1,15 +1,18 @@
 var buildPath 	= global._root + "/";
 var publicPath 	= buildPath + "../public/";
 var assetPath 	= publicPath + "assets/";
+var gulpPath 	= buildPath + "gulp/";
 
 var paths = {
-	build : buildPath,
-	public : publicPath,
-	assets : assetPath,
+	build 	: buildPath,
+	public 	: publicPath,
+	assets 	: assetPath,
+	gulp 	: gulpPath,
 	misc : {
 		bower 			: buildPath + 'bower_components/',
 		bowerJSON 		: buildPath + 'bower.json',
-		index 			: publicPath + 'index.html'
+		index 			: publicPath + 'index.html',
+		noop			: gulpPath + "noop.js"
 	},	
 	js : {
 		base 			: assetPath + "js/",
