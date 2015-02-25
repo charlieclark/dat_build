@@ -53,7 +53,7 @@ gulp.task('build', function(){
 		[ 'vendor_scripts', 'user_scripts_min', 'sass' ],
 		'inject'
 	)
-});
+});  
 
 
 
