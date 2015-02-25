@@ -51,7 +51,7 @@ gulp.task('build', function(){
 	plugins.runSequence(
 		'bower_update',
 		[ 'vendor_scripts', 'user_scripts_min', 'sass' ],
-		'inject'
+		// 'inject'
 	)
 });
 
