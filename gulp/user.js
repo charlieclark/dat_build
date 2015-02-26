@@ -20,27 +20,31 @@ gulp.task('browserify_nowatch', function(){
   browserifyWrap(false);
 });
 
-
 function browserifyWrap( watch ){
-	
+
 	var b = plugins.browserify(paths.js.user + 'app.js', {
 		 debug : true,
 		 paths: [ paths.js.user ]
 	});
+
 	if(watch){
 		b = plugins.watchify(b);
 		b.on('update', function(){
+
 			bundle(b);
 		});
 	}
+
 	bundle(b);
 };
 
 function bundle(b){
-	
+
 	b.bundle()
 		.on('error', function(err){
-	      console.log(err.message);
+
+			gulp.src( paths.misc.noop )
+				.pipe( plugins.notify("your JS broke idiot") );
 	    })
 		.pipe( plugins.source('bundle.js') )
 		.pipe( gulp.dest( paths.js.compiled ) )
