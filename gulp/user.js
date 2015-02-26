@@ -22,6 +22,7 @@ gulp.task('browserify_nowatch', function(){
 
 
 function browserifyWrap( watch ){
+	
 	var b = plugins.browserify(paths.js.user + 'app.js', {
 		 debug : true,
 		 paths: [ paths.js.user ]
@@ -36,7 +37,7 @@ function browserifyWrap( watch ){
 };
 
 function bundle(b){
-	console.log("bundle");
+	
 	b.bundle()
 		.on('error', function(err){
 	      console.log(err.message);
