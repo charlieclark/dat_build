@@ -11,6 +11,7 @@ var paths = {
 	misc : {
 		bower 			: buildPath + 'bower_components/',
 		bowerJSON 		: buildPath + 'bower.json',
+		templates	 	: buildPath + "templates/",
 		index 			: publicPath + 'index.html',
 		icons 			: assetPath + "icons/*.svg",
 		noop			: gulpPath + "noop.js"
@@ -27,8 +28,7 @@ var paths = {
 	styles : {
 		sass 			: assetPath + "styles/sass/",
 		fonts 			: assetPath + "styles/fonts/",
-		css 			: assetPath + "styles/css/",
-		templates	 	: assetPath + "styles/templates/",
+		css 			: assetPath + "styles/css/"		
 	}
 };
 
