@@ -11,6 +11,7 @@ var plugins 	= require("./gulp/plugins");
 //breaking out complex tasks
 require("./gulp/vendor");
 require("./gulp/user");
+require("./gulp/icons");
 
 /* SASS */
 gulp.task('sass', function() {
@@ -45,6 +46,7 @@ gulp.task('watch', ['browserify_watch'], function() {
 	gulp.watch( paths.misc.bowerJSON, ['bower_update'] );
 	gulp.watch( vendorPaths, ['vendor_scripts'] );
 	gulp.watch( paths.styles.sass + '**/*', ['sass'] );
+	gulp.watch( paths.assets + "icons/**/*", ['iconfont'] );
 });
 
 /* BUILD */
