@@ -11,14 +11,14 @@ gulp.task('iconfont', function(){
         }))
         .on('codepoints', function(codepoints, options) {
             // CSS templating, e.g. 
-            gulp.src( paths.styles.templates + "icons.css" )
+            gulp.src( paths.misc.templates + "icons.css" )
             .pipe(plugins.consolidate('lodash', {
                 glyphs: codepoints,
                 fontName: 'myfont',
                 fontPath: '../fonts/',
                 className: 's'
             }))
-            .pipe(plugins.rename('icons.scss'))
+            .pipe(plugins.rename('_icons.scss'))
             .pipe(gulp.dest( paths.styles.sass ));
         })
         .pipe(gulp.dest( paths.styles.fonts ));
