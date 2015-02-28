@@ -6,6 +6,7 @@ var plugins 	= require("./gulp/plugins");
 
 //todo
 //release 
+//reload on template change
 
 //breaking out complex tasks
 require("./gulp/vendor");
