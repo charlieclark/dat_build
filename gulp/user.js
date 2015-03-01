@@ -41,9 +41,8 @@ function browserifyWrap( watch ){
 function bundle(b){
 	b.bundle()
 		.on('error', function(err){
-
 			gulp.src( paths.misc.noop )
-				.pipe( plugins.notify("your JS broke idiot") );
+				.pipe( plugins.notify("your JS broke idiot" + err) );
 	    })
 		.pipe( plugins.source('bundle.js') )
 		.pipe( gulp.dest( paths.js.compiled ) )
