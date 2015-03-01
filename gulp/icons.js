@@ -15,7 +15,7 @@ gulp.task('iconfont', function(){
             .pipe(plugins.consolidate('lodash', {
                 glyphs: codepoints,
                 fontName: 'myfont',
-                fontPath: '../fonts/',
+                fontPath: 'assets/styles/fonts/',
                 className: 's'
             }))
             .pipe(plugins.rename('_icons.scss'))
