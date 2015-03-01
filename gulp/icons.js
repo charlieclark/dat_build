@@ -7,7 +7,8 @@ gulp.task('iconfont', function(){
         .pipe(plugins.svgmin())
         .pipe(plugins.iconfont({
           fontName: 'myfont', // required 
-          appendCodepoints: true // recommended option 
+          appendCodepoints: true, // recommended option 
+          normalize: true
         }))
         .on('codepoints', function(codepoints, options) {
             // CSS templating, e.g. 
