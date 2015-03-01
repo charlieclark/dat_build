@@ -17,7 +17,11 @@ require("./gulp/icons");
 gulp.task('sass', function() {
 
    return plugins.sass( paths.styles.sass ) 
-	    .pipe(gulp.dest( paths.public ))
+   		.on('error', function(err){
+			gulp.src( paths.misc.noop )
+				.pipe( plugins.notify("your CSS broke idiot!" + err));
+	    })
+	    .pipe(gulp.dest( paths.styles.css ))
 	    .pipe(plugins.livereload());
 });
 
