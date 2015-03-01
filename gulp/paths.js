@@ -28,7 +28,7 @@ var paths = {
 	styles : {
 		sass 			: assetPath + "styles/sass/",
 		fonts 			: assetPath + "styles/fonts/",
-		css 			: assetPath + "styles/css/"		
+		css 			: publicPath		
 	}
 };
 
