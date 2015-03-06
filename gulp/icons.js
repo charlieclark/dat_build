@@ -3,7 +3,7 @@ var paths           = require("./paths");
 var plugins         = require("./plugins");
 
 gulp.task('iconfont', function(){
-  gulp.src([ paths.misc.icons ])
+  gulp.src([ paths.styles.icons ])
         .pipe(plugins.svgmin())
         .pipe(plugins.iconfont({
           fontName: 'myfont', // required 
@@ -12,7 +12,7 @@ gulp.task('iconfont', function(){
         }))
         .on('codepoints', function(codepoints, options) {
             // CSS templating, e.g. 
-            gulp.src( paths.misc.templates + "icons.css" )
+            gulp.src( paths.build.templates + "icons.css" )
             .pipe(plugins.consolidate('lodash', {
                 glyphs: codepoints,
                 fontName: 'myfont',

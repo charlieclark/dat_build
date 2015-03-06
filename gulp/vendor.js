@@ -2,7 +2,6 @@ var gulp 			= require('gulp');
 var paths 			= require("./paths");
 var plugins 		= require("./plugins");
 
-
 //bower install / update
 gulp.task('bower_update', function(cb) {
 

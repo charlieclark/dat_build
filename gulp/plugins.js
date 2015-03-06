@@ -1,7 +1,8 @@
 //load gulp plugins: they become with plugins.NAME
 var plugins = require('gulp-load-plugins')({
 	rename: {
-		'gulp-ruby-sass': 'sass'
+		'gulp-ruby-sass': 'sass',
+		'gulp-inject-string': 'injectStr'
 	}
 });
 
@@ -13,5 +14,7 @@ plugins.del 			= require('del');
 plugins.underscore		= require('underscore');
 plugins.runSequence		= require('run-sequence');
 plugins.watchify 		= require('watchify');
+plugins.fs 				= require('fs');
+plugins.noop			= plugins.util.noop;
 
 module.exports = plugins;
