@@ -16,7 +16,7 @@ global._release = argv.env == "release";
 require("./gulp/vendor");
 require("./gulp/user");
 require("./gulp/icons");
-require("./gulp/template");
+// require("./gulp/template");
 require("./gulp/sass");
 require("./gulp/watch");
 require("./gulp/build");

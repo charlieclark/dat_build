@@ -1,5 +1,5 @@
 var buildPath 	= global._root + "/";
-var publicPath 	= buildPath + "../public/";
+var publicPath 	= buildPath + "../";
 var releasePath = buildPath + "../release/";
 var destPath 	= global._release ? releasePath : publicPath;
 var assetPath 	= destPath + "assets/";
@@ -31,7 +31,7 @@ var paths = {
 		user 			: assetPath + "js/user/",
 		vendor_config 	: assetPath + "js/user/vendor_config.js",
 		lib 			: assetPath + "js/lib/",
-		bower 			: assetPath + "js/lib/bower",
+		bower 			: assetPath + "js/lib/bower/",
 		compiled 		: assetPath + "js/compiled/",
 		min 			: assetPath + "js/min/"
 	},
@@ -40,7 +40,7 @@ var paths = {
 		icons 			: assetPath + "icons/*.svg",
 		sass 			: assetPath + "styles/sass/",
 		fonts 			: assetPath + "styles/fonts/",
-		css 			: assetPath + "styles/css/"		
+		css 			: publicPath //assetPath + "styles/css/"		
 	},
 
 	//misc

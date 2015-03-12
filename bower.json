@@ -16,7 +16,7 @@
     "underscore": "*",
     "requirejs": "*",
     "requirejs-text": "*",
-    "preloadjs": "*",
+    "preloadjs": "https://github.com/CreateJS/PreloadJS.git",
     "backbone": "*",
     "marionette": "*",
     "gsap": "*",
