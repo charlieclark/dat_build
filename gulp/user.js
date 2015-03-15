@@ -39,6 +39,7 @@ function browserifyWrap( watch ){
 };
 
 function bundle(b){
+
 	b.bundle()
 		.on('error', function(err){
 			gulp.src( paths.noop )

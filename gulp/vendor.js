@@ -40,7 +40,7 @@ gulp.task('vendor_scripts', function() {
 	
 	var vendorScripts 	= require( paths.js.vendor_config );
 	var desktopScripts 	= plugins.underscore.map( vendorScripts['desktop'], function( s ){ return paths.js.base + s } );
-		
+
 	return gulp.src( desktopScripts )
 		.pipe( plugins.concat( 'vendor.js' ) )
 		.pipe( gulp.dest(  paths.js.compiled ) )
