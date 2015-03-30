@@ -31,7 +31,7 @@ var paths = {
 	js : {
 		base 			: assetPath + "js/",
 		user 			: assetPath + "js/user/",
-		vendor_config 	: assetPath + "js/user/vendor_config.js",
+		vendor_config 	: assetPath + "js/vendor_config.js",
 		lib 			: assetPath + "js/lib/",
 		bower 			: assetPath + "js/lib/bower/",
 		compiled 		: assetPath + "js/compiled/",
