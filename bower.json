@@ -13,13 +13,21 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": "*",
+    "underscore": "*", 
     "requirejs": "*",
     "requirejs-text": "*",
     "preloadjs": "*",
     "backbone": "*",
     "marionette": "*",
     "gsap": "*",
-    "Backbone.localStorage": "*"
+    "Backbone.localStorage": "*",
+    "clmtrackr": "*",
+    "poly2tri": "*",
+    "threejs": "*"
+  },
+  "overrides" : {
+    "clmtrackr" : {
+      "main" : [ "clmtrackr.min.js", "models/model_pca_20_svm.js" ]
+    }
   }
 }

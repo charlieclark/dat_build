@@ -1,6 +1,7 @@
 var buildPath 	= global._root + "/";
-var publicPath 	= buildPath + "../public/";
-var releasePath = buildPath + "../release/";
+var rootPath	= buildPath.replace("build/", "");
+var publicPath 	= rootPath + "public/";
+var releasePath = rootPath + "release/";
 var destPath 	= global._release ? releasePath : publicPath;
 var assetPath 	= destPath + "assets/";
 var gulpPath 	= buildPath + "gulp/";
@@ -9,6 +10,7 @@ var gulpPath 	= buildPath + "gulp/";
 var paths = {
 
 	buildPath 			: buildPath,
+	rootPath			: rootPath,
 	publicPath			: publicPath,
 	releasePath			: releasePath,
 	destPath			: destPath,
@@ -31,7 +33,7 @@ var paths = {
 		user 			: assetPath + "js/user/",
 		vendor_config 	: assetPath + "js/user/vendor_config.js",
 		lib 			: assetPath + "js/lib/",
-		bower 			: assetPath + "js/lib/bower",
+		bower 			: assetPath + "js/lib/bower/",
 		compiled 		: assetPath + "js/compiled/",
 		min 			: assetPath + "js/min/"
 	},
