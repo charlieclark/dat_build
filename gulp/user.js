@@ -10,41 +10,51 @@ gulp.task('user_scripts_min', ['browserify_nowatch'], function() {
 		.pipe( gulp.dest( paths.js.min ) )
 });
 
-gulp.task('browserify_watch', function(){
+gulp.task('browserify_watch', ['browserify_nowatch'], function(){
   
-  browserifyWrap(true);
+  return browserifyWrap(true);
 });
 
 gulp.task('browserify_nowatch', function(){
   
-  browserifyWrap(false);
+  return browserifyWrap(false);
 });
 
 function browserifyWrap( watch ){
 
+	var watchPaths = [ paths.js.user ];
+
+	if( !watch ){
+		watchPaths = watchPaths.concat( [ paths.build.nodeModules ] );
+	}
+
 	var b = plugins.browserify(paths.js.user + 'app.js', {
 		 debug : true,
-		 paths: [ paths.js.user ]
+		 paths: watchPaths
 	});
 
 	if(watch){
 		b = plugins.watchify(b);
 		b.on('update', function(){
-
-			bundle(b);
+			bundle(b, true);
 		});
-	}
+	} 
 
-	bundle(b);
+	bundle(b, false);
 };
 
-function bundle(b){
+function bundle(b, watch){
+
+	if(!watch){
+		b = b.transform('stringify')
+	}
+
 	b.bundle()
-		.on('error', function(err){
-			gulp.src( paths.noop )
-				.pipe( plugins.notify("your JS broke idiot" + err) );
-	    })
-		.pipe( plugins.source('bundle.js') )
-		.pipe( gulp.dest( paths.js.compiled ) )
-		.pipe( plugins.livereload() );
+	.on('error', function(err){
+		gulp.src( paths.noop )
+			.pipe( plugins.notify("your JS broke idiot" + err) );
+    })
+	.pipe( plugins.source('bundle.js') )
+	.pipe( gulp.dest( paths.js.compiled ) )
+	.pipe( plugins.livereload() );
 };

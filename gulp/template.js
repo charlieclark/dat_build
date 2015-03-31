@@ -19,7 +19,7 @@ gulp.task('template', function() {
 	}
 	
 	return gulp.src( paths.public.templates + "**.html" )
-		.pipe( plugins.consolidate('lodash', config) )
+		.pipe( plugins.consolidate('underscore', config) )
 		.pipe( gulp.dest( paths.destPath ) )
 		.pipe( plugins.inject(sources, { relative: true }) )
 		.pipe( plugins.if( !global._release, plugins.injectReload() ) )

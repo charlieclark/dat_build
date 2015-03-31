@@ -14,6 +14,7 @@ plugins.del 			= require('del');
 plugins.underscore		= require('underscore');
 plugins.runSequence		= require('run-sequence');
 plugins.watchify 		= require('watchify');
+plugins.stringify 		= require('stringify');
 plugins.fs 				= require('fs');
 plugins.noop			= plugins.util.noop;
 

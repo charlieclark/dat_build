@@ -13,8 +13,10 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": "*", 
-    "preloadjs": "*",
+    "jquery": "*",
+    "backbone" : "*",
+    "marionette": "*",
+    "preloadjs": "*", 
     "gsap": "*"
   },
   "overrides" : {
