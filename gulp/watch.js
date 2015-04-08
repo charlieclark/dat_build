@@ -3,7 +3,7 @@ var paths           = require("./paths");
 var plugins         = require("./plugins");
 
 /* WATCH */
-gulp.task('watch', ['browserify_watch'], function() {
+gulp.task('watch', ['browserify_watch', 'sass', 'template'], function() {
 
 	var vendorPaths = [ paths.js.lib + '**/*', paths.js.vendor_config ];
 
