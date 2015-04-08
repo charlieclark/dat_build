@@ -17,6 +17,7 @@ gulp.task('build', function(){
 	} else {
 		sequence = [
 			'bower_update',
+			'bower_bourbon',
 			[ 'vendor_scripts', 'user_scripts_min', 'sass' ],
 			'template'
 		];

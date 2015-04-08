@@ -19,5 +19,6 @@ require("./gulp/icons");
 require("./gulp/template");
 require("./gulp/sass");
 require("./gulp/watch");
+require("./gulp/bower");
 require("./gulp/build");
 

@@ -13,10 +13,20 @@
     "tests"
   ],
   "dependencies": {
-    "underscore": "*", 
+    "jquery": "*",
+    "backbone": "*",
+    "marionette": "*",
     "preloadjs": "*",
-    "gsap": "*"
+    "gsap": "*",
+    "color": "*",
+    "socket.io-client": "*",
+    "bourbon": "~4.2.2",
+    "neat": "~1.7.2",
+    "bitters": "~1.0.0"
   },
-  "overrides" : {
+  "overrides": {
+    "socket.io-client": {
+      "main": "socket.io.js"
+    }
   }
 }

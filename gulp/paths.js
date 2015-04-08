@@ -21,6 +21,7 @@ var paths = {
 		bower 			: buildPath + 'bower_components/',
 		bowerJSON 		: buildPath + 'bower.json',
 		templates	 	: buildPath + "templates/",
+		nodeModules		: buildPath + "node_modules/"
 	},
 
 	public : {	
@@ -35,7 +36,8 @@ var paths = {
 		lib 			: assetPath + "js/lib/",
 		bower 			: assetPath + "js/lib/bower/",
 		compiled 		: assetPath + "js/compiled/",
-		min 			: assetPath + "js/min/"
+		min 			: assetPath + "js/min/",
+		templates		: assetPath + "js/templates/"
 	},
 
 	styles : {

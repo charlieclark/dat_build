@@ -3,6 +3,14 @@ var paths           = require("./paths");
 var plugins         = require("./plugins");
 
 /* SASS */
+
+gulp.task('bourbon', function() {
+
+	var exists = plugins.fs.existsSync( paths.styles.sass + "bourbon/" );
+	console.log( exists );
+   return true;
+});
+
 gulp.task('sass', function() {
 
    return plugins.sass( paths.styles.sass ) 

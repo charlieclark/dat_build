@@ -12,6 +12,7 @@ gulp.task('watch', ['browserify_watch'], function() {
 	gulp.watch( paths.build.bowerJSON, ['bower_update'] );
 	gulp.watch( vendorPaths, ['vendor_scripts'] );
 	gulp.watch( paths.styles.sass + '**/*', ['sass'] );
-	gulp.watch( paths.assets + "icons/**/*", ['iconfont'] );
+	gulp.watch( paths.styles.icons, ['iconfont'] );
 	gulp.watch( paths.public.templates + "**.html", ['template'] );
+	gulp.watch( paths.js.templates + "**.html", ['browserify_nowatch'] );
 });
