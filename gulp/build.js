@@ -26,6 +26,16 @@ gulp.task('build', function(){
 	plugins.runSequence.apply( null, sequence );
 });  
 
+gulp.task('build_dev', function(){
+
+	var sequence = [
+		[ 'vendor_scripts', 'user_scripts_min', 'sass' ],
+		'template'
+	];
+
+	plugins.runSequence.apply( null, sequence );
+});  
+
 gulp.task('copy-release', function(){
 	gulp.src( paths.publicPath + "**/*" )
 		.pipe( gulp.dest( paths.releasePath ) )
