@@ -3,20 +3,13 @@ var paths           = require("./paths");
 var plugins         = require("./plugins");
 var config         	= require("./config");
 
-gulp.task('template', function() {
-
-	var exists = plugins.fs.existsSync( paths.public.templates );
+gulp.task('template', ['build_template'], function() {
 
 	var sources = gulp.src( [
 		paths.js.compiled + "vendor.js",
 		paths.js.compiled + "bundle.js",
 		paths.styles.css + "**/*" 
 	], { read: false } );
-
-	if( !exists ){
-		gulp.src( paths.build.templates + "html/**.html" )
-			.pipe( gulp.dest( paths.public.templates ) )
-	}
 	
 	return gulp.src( paths.public.templates + "**.html" )
 		.pipe( plugins.consolidate('underscore', config) )
@@ -25,4 +18,17 @@ gulp.task('template', function() {
 		.pipe( plugins.injectStr.prepend( config.templateMessage ))
 	    .pipe( gulp.dest( paths.destPath ) )
 	    .pipe( plugins.livereload() );
+});
+
+
+gulp.task('build_template', function() { 
+
+	var exists = plugins.fs.existsSync( paths.public.templates );
+
+	if( !exists ){
+		return gulp.src( paths.build.templates + "html/**.html" )
+			.pipe( gulp.dest( paths.public.templates ) )
+	} 
+
+	return false;
 });

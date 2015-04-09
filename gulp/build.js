@@ -33,7 +33,7 @@ gulp.task('build_dev', function(){
 		'template'
 	];
 
-	plugins.runSequence.apply( null, sequence );
+	return plugins.runSequence.apply( null, sequence );
 });  
 
 gulp.task('copy-release', function(){
